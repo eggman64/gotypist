@@ -72,6 +72,7 @@ func render(s State, now time.Time) {
 	if s.Repeat {
 		write(text("Repeating phrase").X(w - 1).Y(1).Align(Right))
 	}
+	write(text("frame time: %.0f ns", 1000000*s.LastFrame.Seconds()).X(w - 1).Y(2).Align(Right))
 
 	if now.Before(s.LastScoreUntil) {
 		write(text("   Score: %.0f  +%.0f (%.0f%%)", s.Score, s.LastScore,

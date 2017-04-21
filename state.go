@@ -43,6 +43,7 @@ type State struct {
 	LastScore        float64
 	LastScorePercent float64
 	LastScoreUntil   time.Time
+	LastFrame        time.Duration
 }
 
 func reduce(s State, ev termbox.Event, now time.Time) State {

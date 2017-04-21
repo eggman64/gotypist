@@ -27,6 +27,7 @@ func loop(state State) bool {
 
 		render(state, now)
 		timers = manageTimers(timers, state.Timeouts, now, termbox.Interrupt)
+		state.LastFrame = time.Now().Sub(now)
 	}
 
 	return state.RageQuit
